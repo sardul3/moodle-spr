@@ -1,6 +1,6 @@
 version: 0.1
 phases:
-  pre-build:
+  pre_build:
     commands:
       - echo "Starting the build pipeline"
 
@@ -9,7 +9,7 @@ phases:
       - echo "Entered the build pipeline"
       - mvn clean prepare-package war:explode
 
-  post-build:
+  post_build:
     commands:
       - echo "End of the build pipeline"
       - mv target/deploy ./
