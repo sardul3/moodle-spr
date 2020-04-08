@@ -1,0 +1,19 @@
+version: 0.1
+phases:
+  pre-build:
+    commands:
+      - echo "Starting the build pipeline"
+
+  build:
+    commands:
+      - echo "Entered the build pipeline"
+      - mvn clean prepare-package war:explode
+
+  post-build:
+    commands:
+      - echo "End of the build pipeline"
+      - mv target/deploy ./
+
+artifacts:
+  files:
+    - deploy/**/*
